@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Legendary Kali Portfolio</title>
+  <title>Domingo Portfolio</title>
   <style>
     /* Reset and background */
     html, body {
@@ -26,6 +26,130 @@
     /* Main 3-column section */
     .main-section {
       display: grid;
-      grid-template-columns: repeat(3,
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      width: 90%;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding-bottom: 40px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+    }
+
+    /* Bottom navigation */
+    .bottom-nav {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      padding: 40px 0;
+    }
+
+    .nav-box {
+      background: #fff;
+      padding: 12px 20px;
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+
+    .nav-box:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+    }
+
+    /* Each section */
+    section {
+      min-height: 100vh;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+footer{text-align:center;margin-top:50px;color:#6a577c;font-size:13px}
+@media(max-width:900px){.main-sections{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+  <h1>Joshua Gabrielle Domingo - Portfolio</h1>
+
+  <!-- 3 Main Columns -->
+  <div class="main-section">
+    <div class="card" onclick="location.href='#illustrations'">Illustrations</div>
+    <div class="card" onclick="location.href='#animations'">Animation</div>
+    <div class="card" onclick="location.href='#graphic'">Graphic Design</div>
+  </div>
+
+  <!-- Bottom Navigation -->
+  <div class="bottom-nav">
+    <div class="nav-box" onclick="location.href='#projects'">Top 3 Projects</div>
+    <div class="nav-box" onclick="location.href='#skills'">Skills Section</div>
+    <div class="nav-box" onclick="location.href='#achievements'">Achievements / Awards</div>
+  </div>
+
+  <!-- Sections -->
+  <section id="illustrations">
+    <h2>Illustrations</h2>
+    <p>[Insert your illustrations here]</p>
+  </section>
+
+  <section id="animations">
+    <h2>Animations</h2>
+    <p>[Insert your animations here]</p>
+  </section>
+
+  <section id="graphic">
+    <h2>Graphic Design</h2>
+    <p>[Insert your graphic design works here]</p>
+  </section>
+
+  <section id="projects">
+    <h2>Top 3 Projects</h2>
+    <p>[Add your project thumbnails + descriptions]</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <p>[List your technical and soft skills]</p>
+  </section>
+
+  <section id="achievements">
+    <h2>Achievements / Awards</h2>
+    <p>[Insert academic, professional, or competition-related awards]</p>
+  </section>
+
+<footer>
+⚔️ Joshua Gabrielle Domingo • IT103-1L • A301 ⚔️
+</footer>
+
+</body>
+</html>
                               
+
 
