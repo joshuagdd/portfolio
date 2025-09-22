@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legendary Kali Portfolio</title>
+  <style>
+    /* ---------- BASE ---------- */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: radial-gradient(circle at top, #0b1e2d, #050a0f);
+      color: #e6faff;
+      line-height: 1.6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+    .container {
+      max-width: 900px;
+      width: 100%;
+      background: rgba(10, 20, 30, 0.8);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 0 20px rgba(0, 200, 255, 0.25);
+      border: 1px solid rgba(0,200,255,0.3);
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #70fffe;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      margin-top: 2rem;
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(112,255,254,0.3);
+      padding-bottom: 0.5rem;
+    }
+    p, li {
+      font-size: 0.95rem;
+    }
+
+    /* ---------- HOVER GLOW ---------- */
+    a, .project, .skill {
+      transition: all 0.3s ease;
+    }
+    a:hover, .project:hover, .skill:hover {
+      color: #70fffe;
+      text-shadow: 0 0 8px #70fffe;
+      cursor: pointer;
+    }
+
+    /* ---------- PROFILE ---------- */
+    .profile {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .profile img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 2px solid #70fffe;
+      box-shadow: 0 0 15px rgba(112,255,254,0.5);
+      object-fit: cover;
+    }
+    .tagline {
+      font-style: italic;
+      color: #9fd9ff;
+      margin-top: 0.5rem;
+    }
+
+    /* ---------- PROJECTS ---------- */
+    .projects {
+      display: grid;
+      gap: 1rem;
+    }
+    .project {
+      padding: 1rem;
+      border: 1px solid rgba(112,255,254,0.2);
+      border-radius: 10px;
+      background: rgba(10,30,40,0.5);
+    }
+    .project img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ---------- SKILLS ---------- */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+    .skill {
+      padding: 0.5rem 1rem;
+      border: 1px solid rgba(112,255,254,0.3);
+      border-radius: 20px;
+      font-size: 0.85rem;
+      background: rgba(5,15,20,0.7);
+    }
+
+    /* ---------- ACHIEVEMENTS ---------- */
+    .achievements {
+      list-style: square inside;
+      color: #d0faff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- PROFILE -->
+    <div class="profile">
+      <img src="images/profile.jpg" alt="Your Photo"> <!-- replace with your photo -->
+      <h1>Your Name</h1>
+      <p class="tagline">“Aspiring Multimedia Artist shaping worlds through visuals and story”</p>
+    </div>
+
+    <!-- PROJECTS -->
+    <h2>Featured Works</h2>
+    <div class="projects">
+      <div class="project">
+        <img src="images/project1.jpg" alt="Project 1">
+        <strong>Project One</strong>
+        <p>A digital illustration inspired by the Legendary Kali, glowing with enchanted aura.</p>
+      </div>
+      <div class="project">
+        <img src="images/project2.jpg" alt="Project 2">
+        <strong>Project Two</strong>
+        <p>A motion graphic piece blending minimal design with Ozero’s mystical energy.</p>
+      </div>
+      <div class="project">
+        <img src="images/project3.jpg" alt="Project 3">
+        <strong>Project Three</strong>
+        <p>A short animation depicting the Sacred Barrier — fragile, yet beautiful.</p>
+      </div>
+    </div>
+
+    <!-- SKILLS -->
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill">Digital Illustration</div>
+      <div class="skill">Motion Graphics</div>
+      <div class="skill">Web Design (HTML/CSS)</div>
+      <div class="skill">Storytelling</div>
+      <div class="skill">Collaboration</div>
+    </div>
+
+    <!-- ACHIEVEMENTS -->
+    <h2>Achievements</h2>
+    <ul class="achievements">
+      <li>Best Concept Art Award – MMA Showcase 2024</li>
+      <li>Dean’s Lister – 2 consecutive years</li>
+      <li>Winner – Local Animation Competition</li>
+    </ul>
+
+  </div>
+</body>
+</html>
