@@ -54,10 +54,96 @@
     .thumb-label{
       position:absolute;bottom:0;left:0;right:0;
       padding:12px;
-      background:linear-gradient(0deg,rgb
+      background:linear-gradient(0deg,rgba(0,0,0,0.7),transparent);
+      color:#e8faff;
+      font-weight:600;
+      text-align:center;
+      letter-spacing:1px;
+    }
+
+    /* Bottom mini sections */
+    .sub-sections{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:16px;
+      width:100%;
+      max-width:900px;
+    }
+    .sub-card{
+      background:rgba(0,255,255,0.05);
+      border:1px solid rgba(139,233,255,0.3);
+      border-radius:12px;
+      padding:14px;
+      text-align:center;
+      transition:transform .3s, box-shadow .3s;
+      cursor:pointer;
+    }
+    .sub-card:hover{
+      transform:translateY(-5px) scale(1.05);
+      box-shadow:0 0 20px rgba(139,233,255,0.35);
+    }
+    .sub-card h3{color:#8be9ff;font-size:15px;margin-bottom:6px}
+    .sub-card p{font-size:13px;color:#c7f5ff}
+
+    footer{margin-top:40px;color:#7dbdcf;font-size:12px;text-align:center}
+    footer:hover{color:#a3efff}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Keeper of the Legendary Kali</h1>
+      <p>“Art and motion forged into blades of light.”</p>
+    </header>
+
+    <!-- 3 big thumbnails -->
+    <div class="showcase">
+      <a href="#illustration" class="thumb">
+        <img src="https://via.placeholder.com/300x500.png?text=Illustration+Preview" alt="Illustration preview">
+        <div class="thumb-label">Illustrations</div>
+      </a>
+
+      <a href="#animation" class="thumb">
+        <video muted loop>
+          <source src="your-animation-preview.mp4" type="video/mp4">
+        </video>
+        <img src="https://via.placeholder.com/300x500.png?text=Animation+Still" alt="Animation preview">
+        <div class="thumb-label">Animations</div>
+      </a>
+
+      <a href="#graphicdesign" class="thumb">
+        <img src="https://via.placeholder.com/300x500.png?text=Graphic+Design+Preview" alt="Graphic design preview">
+        <div class="thumb-label">Graphic Design</div>
+      </a>
+    </div>
+
+    <!-- Sub-sections -->
+    <div class="sub-sections">
+      <div class="sub-card">
+        <h3>Top 3 Projects</h3>
+        <p>See the best of my works.</p>
+      </div>
+      <div class="sub-card">
+        <h3>Skills</h3>
+        <p>Motion, Illustration, Design.</p>
+      </div>
+      <div class="sub-card">
+        <h3>Awards</h3>
+        <p>Recognitions & achievements.</p>
+      </div>
+    </div>
+
+    <footer>
+      ⚔️ Inspired by the Legendary Kali • Ozero Aesthetic ⚔️
+    </footer>
+  </div>
+</body>
+</html>
+
 
 
                               
+
 
 
 
