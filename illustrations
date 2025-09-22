@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Illustrations — Portfolio</title>
+  <style>
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body {
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg,#F0F8FA,#DAEDF2 70%);
+      color:#144557;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      padding:40px 20px;
+    }
+    header {
+      text-align:center;
+      margin-bottom:40px;
+    }
+    header h1 { font-size:28px; font-weight:700; margin-bottom:10px; }
+    header p { font-size:15px; font-style:italic; color:#246780; }
+    .gallery {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+      width:100%;
+      max-width:1000px;
+    }
+    .gallery-item {
+      border:2px solid rgba(139,233,255,0.4);
+      border-radius:12px;
+      overflow:hidden;
+      box-shadow:0 0 15px rgba(0,255,255,0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor:pointer;
+    }
+    .gallery-item:hover {
+      transform: scale(1.05);
+      box-shadow:0 0 30px rgba(139,233,255,0.5);
+    }
+    .gallery-item img, .gallery-item video {
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    footer {
+      margin-top:40px;
+      font-size:12px;
+      color:#7dbdcf;
+      text-align:center;
+    }
+    footer:hover { color:#8CCEDB; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Illustrations</h1>
+    <p>My visual storytelling and artwork collection.</p>
+  </header>
+
+  <div class="gallery">
+  <div class="gallery-item"><img src="assets/Illustrations/illus_1.PNG" alt="Illustration 1"></div>
+  <div class="gallery-item"><img src="assets/Illustrations/illus_2.JPG" alt="Illustration 2"></div>
+  <div class="gallery-item"><img src="assets/Illustrations/illus_3.PNG" alt="Illustration 3"></div>
+  <div class="gallery-item"><img src="assets/Illustrations/illus_4.PNG" alt="Illustration 4"></div>
+  <div class="gallery-item"><img src="assets/Illustrations/illus_5.PNG" alt="Illustration 5"></div>
+  <div class="gallery-item"><img src="assets/Illustrations/illus_6.PNG" alt="Illustration 6"></div>
+  <div class="gallery-item"><img src="assets/Illustrations/illus_7.PNG" alt="Illustration 7"></div>
+  <div class="gallery-item"><img src="assets/Illustrations/illus_8.PNG" alt="Illustration 8"></div>
+  <div class="gallery-item"><img src="assets/Illustrations/illus_9.PNG" alt="Illustration 9"></div>
+  <div class="gallery-item"><img src="assets/Illustrations/illus_10.PNG" alt="Illustration 10"></div>
+  <div class="gallery-item"><img src="assets/Illustrations/illus_11.PNG" alt="Illustration 11"></div>
+  <div class="gallery-item"><img src="assets/Illustrations/illus_12.PNG" alt="Illustration 12"></div>
+</div>
+
+  <footer>
+    ⚔️ JoshuaGDD • IT103-1L.A301 ⚔️
+  </footer>
+
+</body>
+</html>
