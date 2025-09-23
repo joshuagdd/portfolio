@@ -149,6 +149,19 @@
     }
     .sub-card h3{color:#8be9ff;font-size:15px;margin-bottom:6px}
     .sub-card p{font-size:13px;color:#c7f5ff}
+
+    .thumb video {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.thumb:hover video {
+  opacity: 1;
+}
+
+.thumb:hover img {
+  opacity: 0;
+}
   </style>
 </head>
 <body>
@@ -244,21 +257,7 @@
     </footer>
   </div>
 
-  <script>
-    // Play animation video on hover
-    const animThumb = document.querySelector('.thumb.large:nth-child(2)');
-    const animVideo = animThumb.querySelector('video');
-    const animImg = animThumb.querySelector('img');
-
-    animThumb.addEventListener('mouseenter', () => {
-      animVideo.style.opacity = 1;
-      animImg.style.opacity = 0;
-    });
-    animThumb.addEventListener('mouseleave', () => {
-      animVideo.style.opacity = 0;
-      animImg.style.opacity = 1;
-    });
-  </script>
+ 
 </body>
 </html>
 
@@ -266,6 +265,7 @@
 
 
                               
+
 
 
 
