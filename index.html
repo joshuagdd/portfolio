@@ -144,7 +144,57 @@ summary:hover {
 }
 .sub-card h3{color:#8be9ff;font-size:15px;margin-bottom:6px}
 .sub-card p{font-size:13px;color:#c7f5ff}
-    
+
+    #more-info {
+  display:none;
+  margin-top:40px;
+  padding:20px;
+  background:rgba(20,69,87,0.05);
+  border-radius:12px;
+  border:1px solid rgba(139,233,255,0.3);
+}
+
+#more-info h2 {
+  text-align:center;
+  margin-bottom:20px;
+  color:#144557;
+}
+
+.top-projects {
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  margin-bottom:30px;
+}
+
+.project h3 {
+  margin-bottom:8px;
+  font-size:16px;
+  color:#246780;
+}
+
+.project img,
+.project video {
+  width:100%;
+  max-height:300px;
+  border-radius:10px;
+  box-shadow:0 0 15px rgba(0,255,255,0.25);
+  object-fit:cover;
+}
+
+.extras {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.extras .sub-card {
+  background:linear-gradient(135deg,#3898B0,#22719C);
+  padding:16px;
+  border-radius:10px;
+  color:#e8faff;
+  text-align:center;
+} 
   </style>
 </head>
 <body>
@@ -188,53 +238,44 @@ summary:hover {
 
     </div>
 
-   <details>
-  <summary>More Info</summary>
-  <div class="sub-sections">
+  <!-- More Info Section -->
+<div id="more-info">
+  <h2>Top 3 Projects</h2>
 
-    <!-- Top 3 Projects -->
-    <div class="sub-card">
-      <h3>Top 3 Projects</h3>
-      <div style="text-align:left; font-size:13px; color:#c7f5ff;">
-
-        <p><strong>Top 1:</strong> Void of the Cross (Animation 1)</p>
-        <video controls muted style="width:100%; border-radius:10px; margin-bottom:10px;">
-          <source src="assets/animation/anim_1.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-
-        <p><strong>Top 2:</strong> The Mercenary Assassin (Animation 2)</p>
-        <video controls muted style="width:100%; border-radius:10px; margin-bottom:10px;">
-          <source src="assets/animation/anim_2.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-
-        <p><strong>Top 3:</strong> Legendary Kali (Illustration 12)</p>
-        <img src="assets/Illustrations/illus_12.PNG" 
-             alt="Legendary Kali Illustration" 
-             style="width:100%; border-radius:10px; margin-bottom:10px;">
-
-      </div>
+  <div class="top-projects">
+    <div class="project">
+      <h3>Top 1: Void of the Cross</h3>
+      <video controls>
+        <source src="assets/animation/anim_1.mp4" type="video/mp4">
+        Your browser does not support video.
+      </video>
     </div>
 
-    <!-- Skills -->
+    <div class="project">
+      <h3>Top 2: The Mercenary Assassin</h3>
+      <video controls>
+        <source src="assets/animation/anim_2.mp4" type="video/mp4">
+        Your browser does not support video.
+      </video>
+    </div>
+
+    <div class="project">
+      <h3>Top 3: Legendary Kali</h3>
+      <img src="assets/Illustrations/illus_12.PNG" alt="Legendary Kali Illustration">
+    </div>
+  </div>
+
+  <div class="extras">
     <div class="sub-card">
       <h3>Skills</h3>
-      <p><em>Placeholder: list your main creative and technical skills here.</em></p>
+      <p>[Placeholder for your skills list]</p>
     </div>
-
-    <!-- Awards -->
     <div class="sub-card">
       <h3>Awards</h3>
-      <p><em>Placeholder: list your awards, recognitions, or milestones here.</em></p>
+      <p>[Placeholder for your awards/achievements]</p>
     </div>
-
   </div>
-</details>
-    <footer>
-      ⚔️ JoshuaGDD • IT103-1L.A301 ⚔️
-    </footer>
-  </div>
+</div>
 
   <script>
     // Play animation video on hover, no JS for image switch
@@ -258,6 +299,7 @@ summary:hover {
 
 
                               
+
 
 
 
