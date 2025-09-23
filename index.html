@@ -16,7 +16,12 @@
     .wrap{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:40px 20px;}
 
     header{text-align:center;margin-bottom:40px}
-    header h1{font-size:28px;font-weight:700;color:#144557;margin-bottom:10px}
+    header img{
+      max-width:320px; /* proportional resize */
+      height:auto;     /* keeps aspect ratio */
+      display:block;
+      margin:0 auto 10px;
+    }
     header p{color:#246780;font-style:italic;font-size:15px}
 
     /* Main thumbnails */
@@ -154,8 +159,8 @@
 <body>
   <div class="wrap">
     <header>
-      <h1>JoshuaGDD</h1>
-       <img src="joshuagddlogo.png" alt="Portfolio Logo">
+      <!-- PNG logo instead of text -->
+      <img src="joshuagddlogo.png" alt="Portfolio Logo">
       <p>“Breaking barriers of creativity, forging new worlds and stories.”</p>
     </header>
 
@@ -201,19 +206,19 @@
       <div class="top-projects">
         <h3>Top 3 Projects</h3>
 
-        <p><strong>Top 1:</strong> Void of the Cross (Animation 1)</p>
+        <p><strong>Top 1:</strong> Void of the Cross</p>
         <video controls muted>
           <source src="assets/animation/anim_1.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
 
-        <p><strong>Top 2:</strong> The Mercenary Assassin (Animation 2)</p>
+        <p><strong>Top 2:</strong> The Mercenary Assassin</p>
         <video controls muted>
           <source src="assets/animation/anim_2.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
 
-        <p><strong>Top 3:</strong> Legendary Kali (Illustration 12)</p>
+        <p><strong>Top 3:</strong> Legendary Kali Illustration</p>
         <img src="assets/Illustrations/illus_12.PNG" 
              alt="Legendary Kali Illustration">
       </div>
@@ -223,7 +228,7 @@
         <div class="sub-card">
           <h3>Skills</h3>
           <p>Motion, Illustration, Design.</p>
-          <p><em>Placeholder: list your main creative and technical skills here.</em></p>
+    
           <p>Multimedia Artist</p>
           <p><em>Illustration, Animation, 3D Modeling, Graphic Design</em></p>
         </div>
@@ -231,7 +236,7 @@
         <div class="sub-card">
           <h3>Awards</h3>
           <p>Recognitions & achievements.</p>
-          <p><em>Placeholder: list your awards, recognitions, or milestones here.</em></p>
+          
           <p><em>Multimedia Arts Deans Lister at Mapua Malayan Colleges of Mindano (multiple terms)</em></p>
         </div>
       </div>
@@ -263,7 +268,9 @@
 
 
 
+
                               
+
 
 
 
