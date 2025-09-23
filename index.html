@@ -33,7 +33,9 @@
       margin-bottom:50px;
     }
     .thumb{
-      width:260px;
+      flex:1;
+      min-width:260px;
+      max-width:320px;
       height:400px;
       background:rgba(0,255,255,0.05);
       border:2px solid rgba(139,233,255,0.4);
@@ -48,19 +50,34 @@
       transform:scale(1.07) translateY(-8px);
       box-shadow:0 0 40px rgba(139,233,255,0.55);
     }
-    .thumb img, .thumb video {
+
+    /* Image & Video stack fix */
+    .thumb img,
+    .thumb video {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center;
-      display: block;
       border-radius: 8px;
-      transition:transform 0.6s ease, opacity 0.5s ease;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: opacity 0.4s ease;
     }
-
-    .thumb:hover img{transform:scale(1.08)}
-    .thumb video{display:none}
-    .thumb:hover video{display:block}
+    .thumb img {
+      opacity: 1;
+      z-index: 1;
+    }
+    .thumb video {
+      opacity: 0;
+      z-index: 2;
+    }
+    .thumb:hover video {
+      opacity: 1;
+    }
+    .thumb:hover img {
+      opacity: 0;
+    }
 
     .thumb-label{
       position:absolute;bottom:0;left:0;right:0;
@@ -70,7 +87,7 @@
       font-weight:600;
       text-align:center;
       letter-spacing:1px;
-      z-index:10;
+      z-index:3;
     }
 
     footer{margin-top:40px;color:#7dbdcf;font-size:12px;text-align:center}
@@ -149,19 +166,6 @@
     }
     .sub-card h3{color:#8be9ff;font-size:15px;margin-bottom:6px}
     .sub-card p{font-size:13px;color:#c7f5ff}
-
-    .thumb video {
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.thumb:hover video {
-  opacity: 1;
-}
-
-.thumb:hover img {
-  opacity: 0;
-}
   </style>
 </head>
 <body>
@@ -170,41 +174,28 @@
       <!-- PNG logo instead of text -->
       <img src="joshuagddlogo.png" alt="Portfolio Logo">
       <p>“Breaking barriers of creativity, forging new worlds and stories.”</p>
-       <p>Aspiring illustrator and Storyteller.</p>
+      <p>Aspiring illustrator and Storyteller.</p>
     </header>
 
     <!-- 3 big thumbnails -->
-    <div style="display:flex; justify-content:space-between; gap:20px;">
-
-      <div class="thumb large" onclick="location.href='illustrations.html'"
-           style="flex:1; text-align:center; cursor:pointer;">
-         <img src="assets/Illustrations/illus_1.PNG" 
-           alt="Illustrations">
+    <div class="showcase">
+      <div class="thumb" onclick="location.href='illustrations.html'">
+        <img src="assets/Illustrations/illus_1.PNG" alt="Illustrations">
         <span class="thumb-label">Illustrations</span>
       </div>
 
-      <div class="thumb large" onclick="location.href='animation.html'" 
-           style="flex:1; text-align:center; cursor:pointer; position:relative;">
-        <!-- Static PNG -->
-        <img src="anim_0.png" 
-             alt="Animations Thumbnail" 
-             style="width:100%; height:100%; object-fit:cover; object-position:center; border-radius:8px; position:absolute; top:0; left:0; z-index:2;">
-        <!-- Video hidden by default -->
-        <video autoplay muted loop 
-               style="width:100%; height:100%; border-radius:8px; position:absolute; top:0; left:0; z-index:1; opacity:0;">
+      <div class="thumb" onclick="location.href='animation.html'">
+        <img src="anim_0.png" alt="Animations Thumbnail">
+        <video muted loop>
           <source src="assets/animation/anim_1.mp4" type="video/mp4">
         </video>
         <span class="thumb-label">Animations</span>
       </div>
 
-      <div class="thumb large" onclick="location.href='modeling.html'" 
-           style="flex:1; text-align:center; cursor:pointer;">
-        <img src="assets/3dmodeling/model_7.png" 
-             alt="3D Modeling" 
-             style="width:100%; height:100%; object-fit:cover; object-position:center; border-radius:8px;">
+      <div class="thumb" onclick="location.href='modeling.html'">
+        <img src="assets/3dmodeling/model_7.png" alt="3D Modeling">
         <span class="thumb-label">3D Modeling</span>
       </div>
-
     </div>
 
     <!-- More Info -->
@@ -228,16 +219,13 @@
         </video>
 
         <p><strong>Top 3:</strong> Legendary Kali Illustration</p>
-        <img src="assets/Illustrations/illus_12.PNG" 
-             alt="Legendary Kali Illustration">
+        <img src="assets/Illustrations/illus_12.PNG" alt="Legendary Kali Illustration">
       </div>
 
       <!-- Skills & Awards side by side -->
       <div class="info-grid">
         <div class="sub-card">
           <h3>Skills</h3>
-         
-    
           <p>Multimedia Artist</p>
           <p><em>Illustration, Animation, 3D Modeling, Graphic Design</em></p>
         </div>
@@ -245,26 +233,24 @@
         <div class="sub-card">
           <h3>Awards</h3>
           <p>Recognitions & achievements.</p>
-          
-          <p><em>Multimedia Arts Deans Lister at Mapua Malayan Colleges of Mindano (multiple terms)</em></p>
+          <p><em>Multimedia Arts Dean’s Lister at Mapua Malayan Colleges Mindanao (multiple terms)</em></p>
         </div>
       </div>
-
     </details>
 
     <footer>
       ⚔️ JoshuaGDD • IT103-1L.A301 ⚔️
     </footer>
   </div>
-
- 
 </body>
 </html>
 
 
 
 
+
                               
+
 
 
 
