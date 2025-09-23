@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>3D Modeling — Portfolio</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background:linear-gradient(135deg,#F0F8FA,#DAEDF2 70%);
+      color:#144557;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      padding:40px 20px;
+    }
+    header{text-align:center;margin-bottom:40px;}
+    header h1{font-size:28px;font-weight:700;margin-bottom:10px;}
+    header p{font-size:15px;font-style:italic;color:#246780;}
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+      width:100%;
+      max-width:1000px;
+    }
+    .gallery-item{
+      border:2px solid rgba(139,233,255,0.4);
+      border-radius:12px;
+      overflow:hidden;
+      box-shadow:0 0 15px rgba(0,255,255,0.2);
+      transition:transform 0.3s, box-shadow 0.3s;
+      cursor:pointer;
+      position:relative;
+    }
+    .gallery-item:hover{
+      transform:scale(1.05);
+      box-shadow:0 0 30px rgba(139,233,255,0.5);
+    }
+    .gallery-item img, .gallery-item video{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      border-radius:8px;
+      transition:transform 0.3s ease, opacity 0.5s ease;
+    }
+
+    .video-item img{
+      position:absolute; top:0; left:0; z-index:2;
+    }
+    .video-item video{
+      position:absolute; top:0; left:0; z-index:1; opacity:0;
+    }
+    .video-item:hover img{opacity:0;}
+    .video-item:hover video{opacity:1;}
+
+    /* Modal CSS */
+    input[type="checkbox"]{
+      display:none;
+    }
+    .modal{
+      position:fixed; top:0; left:0; width:100%; height:100%;
+      background:rgba(0,0,0,0.9);
+      display:flex; justify-content:center; align-items:center;
+      opacity:0; pointer-events:none;
+      transition:opacity 0.3s ease;
+      z-index:999;
+    }
+    input[type="checkbox"]:checked + .modal{
+      opacity:1; pointer-events:auto;
+    }
+    .modal img, .modal video{
+      max-width:90%; max-height:90%;
+      border-radius:8px;
+    }
+    .modal video{display:block;}
+    .modal-label{
+      position:absolute; top:20px; right:30px;
+      font-size:30px; color:#fff; cursor:pointer;
+    }
+
+    footer{margin-top:40px;font-size:12px;color:#7dbdcf;text-align:center;}
+    footer:hover{color:#8CCEDB;}
+    .back-button{
+      margin-top:30px;
+      padding:10px 20px;
+      background:linear-gradient(135deg,#3898B0,#22719C);
+      color:#e8faff;
+      font-weight:600;
+      border:none;
+      border-radius:8px;
+      cursor:pointer;
+      transition:transform 0.3s, box-shadow 0.3s;
+    }
+    .back-button:hover{
+      transform:scale(1.05);
+      box-shadow:0 0 15px rgba(139,233,255,0.4);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>3D Modeling</h1>
+    <p>My 3D modeling portfolio, showcasing renders and designs.</p>
+  </header>
+
+  <div class="gallery">
+    <!-- Model 1 Video -->
+    <label class="gallery-item video-item">
+      <input type="checkbox">
+      <img src="assets/3dmodeling/model_1_thumb.png" alt="3D Model 1">
+      <video autoplay muted loop>
+        <source src="assets/3dmodeling/model_1.mp4" type="video/mp4">
+      </video>
+
+      <div class="modal">
+        <label class="modal-label" for="">✖</label>
+        <video autoplay muted loop>
+          <source src="assets/3dmodeling/model_1.mp4" type="video/mp4">
+        </video>
+      </div>
+    </label>
+
+    <!-- Model 2 Video -->
+    <label class="gallery-item video-item">
+      <input type="checkbox">
+      <img src="assets/3dmodeling/model_2_thumb.png" alt="3D Model 2">
+      <video autoplay muted loop>
+        <source src="assets/3dmodeling/model_2.mp4" type="video/mp4">
+      </video>
+
+      <div class="modal">
+        <label class="modal-label" for="">✖</label>
+        <video autoplay muted loop>
+          <source src="assets/3dmodeling/model_2.mp4" type="video/mp4">
+        </video>
+      </div>
+    </label>
+
+    <!-- Static image models -->
+    <label class="gallery-item">
+      <input type="checkbox">
+      <img src="assets/3dmodeling/model_3.PNG" alt="3D Model 3">
+      <div class="modal">
+        <label class="modal-label" for="">✖</label>
+        <img src="assets/3dmodeling/model_3.PNG" alt="3D Model 3">
+      </div>
+    </label>
+
+    <label class="gallery-item">
+      <input type="checkbox">
+      <img src="assets/3dmodeling/model_4.PNG" alt="3D Model 4">
+      <div class="modal">
+        <label class="modal-label" for="">✖</label>
+        <img src="assets/3dmodeling/model_4.PNG" alt="3D Model 4">
+      </div>
+    </label>
+
+    <label class="gallery-item">
+      <input type="checkbox">
+      <img src="assets/3dmodeling/model_5.PNG" alt="3D Model 5">
+      <div class="modal">
+        <label class="modal-label" for="">✖</label>
+        <img src="assets/3dmodeling/model_5.PNG" alt="3D Model 5">
+      </div>
+    </label>
+
+          <label class="gallery-item">
+      <input type="checkbox">
+      <img src="assets/3dmodeling/model_6.PNG" alt="3D Model 5">
+      <div class="modal">
+        <label class="modal-label" for="">✖</label>
+        <img src="assets/3dmodeling/model_6.PNG" alt="3D Model 5">
+      </div>
+    </label>
+
+    <label class="gallery-item">
+      <input type="checkbox">
+      <img src="assets/3dmodeling/model_7.png" alt="3D Model 5">
+      <div class="modal">
+        <label class="modal-label" for="">✖</label>
+        <img src="assets/3dmodeling/model_7.png" alt="3D Model 5">
+      </div>
+    </label>
+
+     <label class="gallery-item">
+      <input type="checkbox">
+      <img src="assets/3dmodeling/model_8.png" alt="3D Model 5">
+      <div class="modal">
+        <label class="modal-label" for="">✖</label>
+        <img src="assets/3dmodeling/model_8.png" alt="3D Model 5">
+      </div>
+    </label>
+
+    <label class="gallery-item">
+      <input type="checkbox">
+      <img src="assets/3dmodeling/model_8.png" alt="3D Model 5">
+      <div class="modal">
+        <label class="modal-label" for="">✖</label>
+        <img src="assets/3dmodeling/model_8.png" alt="3D Model 5">
+      </div>
+    </label>
+    
+  </div>
+
+  <button class="back-button" onclick="location.href='index.html'">⬅ Back to Home</button>
+
+  <footer>
+    ⚔️ JoshuaGDD • IT103-1L.A301 ⚔️
+  </footer>
+</body>
+</html>
+
+
+  <footer>
+    ⚔️ JoshuaGDD • IT103-1L.A301 ⚔️
+  </footer>
+</body>
+</html>
