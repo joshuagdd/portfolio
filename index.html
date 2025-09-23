@@ -64,6 +64,13 @@
       font-weight:600;
       text-align:center;
       letter-spacing:1px;
+
+      .thumb.large:hover img {
+  opacity: 0; /* fade out PNG */
+}
+.thumb.large:hover video {
+  opacity: 1; /* fade in video */
+}
     }
 
     /* Bottom mini sections */
@@ -113,13 +120,22 @@
     <span class="thumb-label">Illustrations</span>
   </div>
 
-  <div class="thumb large" onclick="location.href='animation.html'" 
-       style="flex:1; text-align:center; cursor:pointer;">
-    <video autoplay muted loop style="width:100%; height:auto; border-radius:8px;">
-      <source src="assets/animation/anim_1.mp4" type="video/mp4">
-    </video>
-    <span class="thumb-label">Animations</span>
-  </div>
+ <div class="thumb large" onclick="location.href='animation.html'" 
+     style="flex:1; text-align:center; cursor:pointer; position:relative;">
+  
+  <!-- Static PNG -->
+  <img src="assets/animation/anim_thumb.png" 
+       alt="Animations Thumbnail" 
+       style="width:100%; height:100%; object-fit:cover; object-position:center; display:block; border-radius:8px; position:absolute; top:0; left:0; z-index:2; transition:opacity 0.5s ease;">
+
+  <!-- Video hidden by default -->
+  <video autoplay muted loop 
+         style="width:100%; height:100%; border-radius:8px; position:absolute; top:0; left:0; z-index:1; opacity:0; transition:opacity 0.5s ease;">
+    <source src="assets/animation/anim_1.mp4" type="video/mp4">
+  </video>
+
+  <span class="thumb-label">Animations</span>
+</div>
 
   <div class="thumb large" onclick="location.href='modeling.html'" 
        style="flex:1; text-align:center; cursor:pointer;">
@@ -157,6 +173,7 @@
 
 
                               
+
 
 
 
