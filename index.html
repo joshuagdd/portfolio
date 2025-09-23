@@ -100,6 +100,51 @@
 
     footer{margin-top:40px;color:#7dbdcf;font-size:12px;text-align:center}
     footer:hover{color:#8CCEDB}
+    
+details {
+  margin-top:30px;
+  width:100%;
+  max-width:900px;
+  text-align:center;
+}
+summary {
+  list-style:none;
+  display:inline-block;
+  margin-bottom:15px;
+  padding:12px 24px;
+  background:linear-gradient(135deg,#3898B0,#22719C);
+  border-radius:12px;
+  color:#e8faff;
+  font-weight:600;
+  cursor:pointer;
+  box-shadow:0 0 15px rgba(0,255,255,0.3);
+  transition:transform .3s, box-shadow .3s;
+}
+summary:hover {
+  transform:scale(1.05);
+  box-shadow:0 0 25px rgba(0,255,255,0.5);
+}
+.sub-sections{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:16px;
+}
+.sub-card{
+  background:linear-gradient(135deg,#3898B0,#22719C);
+  border:1px solid rgba(139,233,255,0.3);
+  border-radius:12px;
+  padding:14px;
+  text-align:center;
+  transition:transform .3s, box-shadow .3s;
+  cursor:pointer;
+}
+.sub-card:hover{
+  transform:translateY(-5px) scale(1.05);
+  box-shadow:0 0 20px rgba(139,233,255,0.35);
+}
+.sub-card h3{color:#8be9ff;font-size:15px;margin-bottom:6px}
+.sub-card p{font-size:13px;color:#c7f5ff}
+    
   </style>
 </head>
 <body>
@@ -143,22 +188,23 @@
 
     </div>
 
-    <!-- Sub-sections -->
-    <div class="sub-sections">
-      <div class="sub-card">
-        <h3>Top 3 Projects</h3>
-        <p>See the best of my works.</p>
-      </div>
-      <div class="sub-card">
-        <h3>Skills</h3>
-        <p>Motion, Illustration, Design.</p>
-      </div>
-      <div class="sub-card">
-        <h3>Awards</h3>
-        <p>Recognitions & achievements.</p>
-      </div>
+    <details>
+  <summary>More Info</summary>
+  <div class="sub-sections">
+    <div class="sub-card">
+      <h3>Top 3 Projects</h3>
+      <p>See the best of my works.</p>
     </div>
-
+    <div class="sub-card">
+      <h3>Skills</h3>
+      <p>Motion, Illustration, Design.</p>
+    </div>
+    <div class="sub-card">
+      <h3>Awards</h3>
+      <p>Recognitions & achievements.</p>
+    </div>
+  </div>
+</details>
     <footer>
       ⚔️ JoshuaGDD • IT103-1L.A301 ⚔️
     </footer>
@@ -186,6 +232,7 @@
 
 
                               
+
 
 
 
