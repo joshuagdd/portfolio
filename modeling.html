@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>3D Modeling — Portfolio</title>
   <style>
-    *{box-sizing:border-box;margin:0;padding:0;}
-    body{
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body {
       font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background:linear-gradient(135deg,#F0F8FA,#DAEDF2 70%);
+      background: linear-gradient(135deg,#F0F8FA,#DAEDF2 70%);
       color:#144557;
       min-height:100vh;
       display:flex;
@@ -16,201 +16,140 @@
       align-items:center;
       padding:40px 20px;
     }
-    header{text-align:center;margin-bottom:40px;}
-    header h1{font-size:28px;font-weight:700;margin-bottom:10px;}
-    header p{font-size:15px;font-style:italic;color:#246780;}
+    header { text-align:center; margin-bottom:40px; }
+    header h1 { font-size:28px; font-weight:700; margin-bottom:10px; }
+    header p { font-size:15px; font-style:italic; color:#246780; }
 
-    .gallery{
+    /* Gallery grid */
+    .gallery {
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
       gap:20px;
       width:100%;
       max-width:1000px;
     }
-    .gallery-item{
+    .gallery-item {
       border:2px solid rgba(139,233,255,0.4);
       border-radius:12px;
       overflow:hidden;
       box-shadow:0 0 15px rgba(0,255,255,0.2);
-      transition:transform 0.3s, box-shadow 0.3s;
+      transition: transform 0.3s, box-shadow 0.3s;
       cursor:pointer;
-      position:relative;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:#f0f8fa;
     }
-    .gallery-item:hover{
-      transform:scale(1.05);
+    .gallery-item:hover {
+      transform: scale(1.05);
       box-shadow:0 0 30px rgba(139,233,255,0.5);
     }
-    .gallery-item img, .gallery-item video{
-      width:100%;
-      height:100%;
-      object-fit:cover;
+    .gallery-item img, .gallery-item video {
+      max-width: 100%;
+      height: auto;
       display:block;
       border-radius:8px;
-      transition:transform 0.3s ease, opacity 0.5s ease;
     }
 
-    /* Hover play for video thumbnails */
-    .video-item img{
-      position:absolute; top:0; left:0; z-index:2;
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      padding: 40px;
+      left:0; top:0;
+      width:100%; height:100%;
+      background: rgba(0,0,0,0.85);
+      justify-content:center;
+      align-items:center;
     }
-    .video-item video{
-      position:absolute; top:0; left:0; z-index:1; opacity:0;
+    .lightbox:target {
+      display:flex;
     }
-    .video-item:hover img{opacity:0;}
-    .video-item:hover video{opacity:1;}
-
-    /* Modal CSS */
-    input[type="checkbox"]{display:none;}
-    .modal{
-      position:fixed; top:0; left:0; width:100%; height:100%;
-      background:rgba(0,0,0,0.9);
-      display:flex; justify-content:center; align-items:center;
-      opacity:0; pointer-events:none;
-      transition:opacity 0.3s ease;
-      z-index:999;
-    }
-    input[type="checkbox"]:checked + .modal{
-      opacity:1; pointer-events:auto;
-    }
-    .modal img, .modal video{
-      max-width:90%; max-height:90%;
-      border-radius:8px;
-    }
-    .modal-label{
-      position:absolute; top:20px; right:30px;
-      font-size:30px; color:#fff; cursor:pointer;
+    .lightbox img, .lightbox video {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 0 30px rgba(255,255,255,0.3);
     }
 
-    footer{margin-top:40px;font-size:12px;color:#7dbdcf;text-align:center;}
-    footer:hover{color:#8CCEDB;}
-    .back-button{
-      margin-top:30px;
-      padding:10px 20px;
-      background:linear-gradient(135deg,#3898B0,#22719C);
-      color:#e8faff;
-      font-weight:600;
-      border:none;
-      border-radius:8px;
-      cursor:pointer;
-      transition:transform 0.3s, box-shadow 0.3s;
+    footer {
+      margin-top:40px;
+      font-size:12px;
+      color:#7dbdcf;
+      text-align:center;
     }
-    .back-button:hover{
-      transform:scale(1.05);
-      box-shadow:0 0 15px rgba(139,233,255,0.4);
-    }
+    footer:hover { color:#8CCEDB; }
   </style>
 </head>
 <body>
-  <header>
-    <h1>3D Modeling</h1>
-    <p>My 3D modeling portfolio, showcasing renders and designs.</p>
-  </header>
 
-  <div class="gallery">
-    <!-- Model 1 Video -->
-    <div class="gallery-item video-item">
-      <label for="model1">
-        <img src="thumb/model_1_thumb.jpg" alt="3D Model 1">
-        <video autoplay muted loop>
-          <source src="assets/3dmodeling/model_1.mp4" type="video/mp4">
-        </video>
-      </label>
-      <input type="checkbox" id="model1">
-      <div class="modal">
-        <label class="modal-label" for="model1">✖</label>
-        <video autoplay muted loop>
-          <source src="assets/3dmodeling/model_1.mp4" type="video/mp4">
-        </video>
-      </div>
-    </div>
+<header>
+  <h1>3D Modeling</h1>
+  <p>My 3D modeling portfolio, showcasing renders and designs.</p>
+</header>
 
-    <!-- Model 2 Video -->
-    <div class="gallery-item video-item">
-      <label for="model2">
-        <img src="thumb/model_2_thumb.jpg" alt="3D Model 2">
-        <video autoplay muted loop>
-          <source src="assets/3dmodeling/model_2.mp4" type="video/mp4">
-        </video>
-      </label>
-      <input type="checkbox" id="model2">
-      <div class="modal">
-        <label class="modal-label" for="model2">✖</label>
-        <video autoplay muted loop>
-          <source src="assets/3dmodeling/model_2.mp4" type="video/mp4">
-        </video>
-      </div>
-    </div>
+<div class="gallery">
+  <!-- Model 1 (Video) -->
+  <a class="gallery-item" href="#vid1">
+    <video autoplay muted loop>
+      <source src="assets/3dmodeling/model_1.mp4" type="video/mp4">
+    </video>
+  </a>
 
-    <!-- Static images -->
-    <div class="gallery-item">
-      <label for="model3"><img src="assets/3dmodeling/model_3.PNG" alt="3D Model 3"></label>
-      <input type="checkbox" id="model3">
-      <div class="modal">
-        <label class="modal-label" for="model3">✖</label>
-        <img src="assets/3dmodeling/model_3.PNG" alt="3D Model 3">
-      </div>
-    </div>
+  <!-- Model 2 (Video) -->
+  <a class="gallery-item" href="#vid2">
+    <video autoplay muted loop>
+      <source src="assets/3dmodeling/model_2.mp4" type="video/mp4">
+    </video>
+  </a>
 
-    <div class="gallery-item">
-      <label for="model4"><img src="assets/3dmodeling/model_4.PNG" alt="3D Model 4"></label>
-      <input type="checkbox" id="model4">
-      <div class="modal">
-        <label class="modal-label" for="model4">✖</label>
-        <img src="assets/3dmodeling/model_4.PNG" alt="3D Model 4">
-      </div>
-    </div>
+  <!-- Images -->
+  <a class="gallery-item" href="#img3"><img src="assets/3dmodeling/model_3.PNG" alt="3D Model 3"></a>
+  <a class="gallery-item" href="#img4"><img src="assets/3dmodeling/model_4.PNG" alt="3D Model 4"></a>
+  <a class="gallery-item" href="#img5"><img src="assets/3dmodeling/model_5.PNG" alt="3D Model 5"></a>
+  <a class="gallery-item" href="#img6"><img src="assets/3dmodeling/model_6.PNG" alt="3D Model 6"></a>
+  <a class="gallery-item" href="#img7"><img src="assets/3dmodeling/model_7.png" alt="3D Model 7"></a>
+  <a class="gallery-item" href="#img8"><img src="assets/3dmodeling/model_8.png" alt="3D Model 8"></a>
+  <a class="gallery-item" href="#img9"><img src="assets/3dmodeling/model_9.png" alt="3D Model 9"></a>
+</div>
 
-    <div class="gallery-item">
-      <label for="model5"><img src="assets/3dmodeling/model_5.PNG" alt="3D Model 5"></label>
-      <input type="checkbox" id="model5">
-      <div class="modal">
-        <label class="modal-label" for="model5">✖</label>
-        <img src="assets/3dmodeling/model_5.PNG" alt="3D Model 5">
-      </div>
-    </div>
+<!-- Lightbox overlays -->
+<!-- Videos -->
+<a href="#" class="lightbox" id="vid1">
+  <video controls autoplay loop>
+    <source src="assets/3dmodeling/model_1.mp4" type="video/mp4">
+  </video>
+</a>
 
-    <div class="gallery-item">
-      <label for="model6"><img src="assets/3dmodeling/model_6.PNG" alt="3D Model 6"></label>
-      <input type="checkbox" id="model6">
-      <div class="modal">
-        <label class="modal-label" for="model6">✖</label>
-        <img src="assets/3dmodeling/model_6.PNG" alt="3D Model 6">
-      </div>
-    </div>
+<a href="#" class="lightbox" id="vid2">
+  <video controls autoplay loop>
+    <source src="assets/3dmodeling/model_2.mp4" type="video/mp4">
+  </video>
+</a>
 
-    <div class="gallery-item">
-      <label for="model7"><img src="assets/3dmodeling/model_7.png" alt="3D Model 7"></label>
-      <input type="checkbox" id="model7">
-      <div class="modal">
-        <label class="modal-label" for="model7">✖</label>
-        <img src="assets/3dmodeling/model_7.png" alt="3D Model 7">
-      </div>
-    </div>
+<!-- Images -->
+<a href="#" class="lightbox" id="img3"><img src="assets/3dmodeling/model_3.PNG" alt="3D Model 3"></a>
+<a href="#" class="lightbox" id="img4"><img src="assets/3dmodeling/model_4.PNG" alt="3D Model 4"></a>
+<a href="#" class="lightbox" id="img5"><img src="assets/3dmodeling/model_5.PNG" alt="3D Model 5"></a>
+<a href="#" class="lightbox" id="img6"><img src="assets/3dmodeling/model_6.PNG" alt="3D Model 6"></a>
+<a href="#" class="lightbox" id="img7"><img src="assets/3dmodeling/model_7.png" alt="3D Model 7"></a>
+<a href="#" class="lightbox" id="img8"><img src="assets/3dmodeling/model_8.png" alt="3D Model 8"></a>
+<a href="#" class="lightbox" id="img9"><img src="assets/3dmodeling/model_9.png" alt="3D Model 9"></a>
 
-    <div class="gallery-item">
-      <label for="model8"><img src="assets/3dmodeling/model_8.png" alt="3D Model 8"></label>
-      <input type="checkbox" id="model8">
-      <div class="modal">
-        <label class="modal-label" for="model8">✖</label>
-        <img src="assets/3dmodeling/model_8.png" alt="3D Model 8">
-      </div>
-    </div>
-
-    <div class="gallery-item">
-      <label for="model9"><img src="assets/3dmodeling/model_9.png" alt="3D Model 9"></label>
-      <input type="checkbox" id="model9">
-      <div class="modal">
-        <label class="modal-label" for="model9">✖</label>
-        <img src="assets/3dmodeling/model_9.png" alt="3D Model 9">
-      </div>
-    </div>
+<footer>
+  <div style="margin:30px 0; text-align:center;">
+    <a href="index.html" 
+       style="text-decoration:none; background:linear-gradient(135deg,#3898B0,#22719C); 
+              color:#e8faff; padding:12px 24px; border-radius:12px; font-weight:600; 
+              box-shadow:0 0 15px rgba(0,255,255,0.3); transition:transform 0.3s, box-shadow 0.3s;">
+      Back to Home
+    </a>
   </div>
+  ⚔️ JoshuaGDD • IT103-1L.A301 ⚔️
+</footer>
 
-  <button class="back-button" onclick="location.href='index.html'">⬅ Back to Home</button>
-
-  <footer>
-    ⚔️ JoshuaGDD • IT103-1L.A301 ⚔️
-  </footer>
 </body>
 </html>
+
 
