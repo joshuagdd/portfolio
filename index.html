@@ -15,16 +15,9 @@
     }
     .wrap{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:40px 20px;}
 
-    header {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-header img {
-  max-width: 80px; 
-  height: auto;     
-  display: block;
-  margin: 0 auto;
+    header{text-align:center;margin-bottom:40px}
+    header h1{font-size:28px;font-weight:700;color:#144557;margin-bottom:10px}
+    header p{color:#246780;font-style:italic;font-size:15px}
 
     /* Main thumbnails */
     .showcase{
@@ -80,6 +73,11 @@ header img {
       z-index:10;
     }
 
+    /* Bottom mini sections */
+    .sub-sections{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:16px;
     footer{margin-top:40px;color:#7dbdcf;font-size:12px;text-align:center}
     footer:hover{color:#8CCEDB}
 
@@ -88,6 +86,7 @@ header img {
       margin-top:30px;
       width:100%;
       max-width:900px;
+      margin-top:50px; 
       text-align:center;
     }
     summary {
@@ -103,6 +102,7 @@ header img {
       box-shadow:0 0 15px rgba(0,255,255,0.3);
       transition:transform .3s, box-shadow .3s;
     }
+    .sub-card{
     summary:hover {
       transform:scale(1.05);
       box-shadow:0 0 25px rgba(0,255,255,0.5);
@@ -156,12 +156,60 @@ header img {
     }
     .sub-card h3{color:#8be9ff;font-size:15px;margin-bottom:6px}
     .sub-card p{font-size:13px;color:#c7f5ff}
+
+    footer{margin-top:40px;color:#7dbdcf;font-size:12px;text-align:center}
+    footer:hover{color:#8CCEDB}
+
+details {
+  margin-top:30px;
+  width:100%;
+  max-width:900px;
+  text-align:center;
+}
+summary {
+  list-style:none;
+  display:inline-block;
+  margin-bottom:15px;
+  padding:12px 24px;
+  background:linear-gradient(135deg,#3898B0,#22719C);
+  border-radius:12px;
+  color:#e8faff;
+  font-weight:600;
+  cursor:pointer;
+  box-shadow:0 0 15px rgba(0,255,255,0.3);
+  transition:transform .3s, box-shadow .3s;
+}
+summary:hover {
+  transform:scale(1.05);
+  box-shadow:0 0 25px rgba(0,255,255,0.5);
+}
+.sub-sections{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:16px;
+}
+.sub-card{
+  background:linear-gradient(135deg,#3898B0,#22719C);
+  border:1px solid rgba(139,233,255,0.3);
+  border-radius:12px;
+  padding:14px;
+  text-align:center;
+  transition:transform .3s, box-shadow .3s;
+  cursor:pointer;
+}
+.sub-card:hover{
+  transform:translateY(-5px) scale(1.05);
+  box-shadow:0 0 20px rgba(139,233,255,0.35);
+}
+.sub-card h3{color:#8be9ff;font-size:15px;margin-bottom:6px}
+.sub-card p{font-size:13px;color:#c7f5ff}
+
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-       <img src="joshuagddlogo.png" alt="Portfolio Logo">
+      <h1>JoshuaGDD</h1>
       <p>“Breaking barriers of creativity, forging new worlds and stories.”</p>
     </header>
 
@@ -201,19 +249,28 @@ header img {
 
     <!-- More Info -->
     <details>
+  <summary>More Info</summary>
+  <div class="sub-sections">
       <summary>More Info</summary>
 
+    <!-- Top 3 Projects -->
+    <div class="sub-card">
+      <h3>Top 3 Projects</h3>
+      <p>See the best of my works.</p>
+      <div style="text-align:left; font-size:13px; color:#c7f5ff;">
       <!-- Top Projects full width -->
       <div class="top-projects">
         <h3>Top 3 Projects</h3>
 
         <p><strong>Top 1:</strong> Void of the Cross (Animation 1)</p>
+        <video controls muted style="width:100%; border-radius:10px; margin-bottom:10px;">
         <video controls muted>
           <source src="assets/animation/anim_1.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
 
         <p><strong>Top 2:</strong> The Mercenary Assassin (Animation 2)</p>
+        <video controls muted style="width:100%; border-radius:10px; margin-bottom:10px;">
         <video controls muted>
           <source src="assets/animation/anim_2.mp4" type="video/mp4">
           Your browser does not support the video tag.
@@ -221,32 +278,51 @@ header img {
 
         <p><strong>Top 3:</strong> Legendary Kali (Illustration 12)</p>
         <img src="assets/Illustrations/illus_12.PNG" 
+             alt="Legendary Kali Illustration" 
+             style="width:100%; border-radius:10px; margin-bottom:10px;">
+
              alt="Legendary Kali Illustration">
       </div>
+    </div>
 
+    <!-- Skills -->
+    <div class="sub-card">
+      <h3>Skills</h3>
+      <p>Motion, Illustration, Design.</p>
+      <p><em>Placeholder: list your main creative and technical skills here.</em></p>
+    </div>
       <!-- Skills & Awards side by side -->
       <div class="info-grid">
         <div class="sub-card">
           <h3>Skills</h3>
-          <p>Multimedia Artist</p>
-          <p><em>Illustration, Animation, 3D Modeling, Graphic Design</em></p>
+          <p>Motion, Illustration, Design.</p>
+          <p><em>Placeholder: list your main creative and technical skills here.</em></p>
         </div>
 
         <div class="sub-card">
           <h3>Awards</h3>
           <p>Recognitions & achievements.</p>
-          <p><em>Multimedia Arts Deans Lister at Mapua Malayan Colleges of Mindano (multiple terms)</em></p>
+          <p><em>Placeholder: list your awards, recognitions, or milestones here.</em></p>
         </div>
       </div>
 
+    <!-- Awards -->
+    <div class="sub-card">
+      <h3>Awards</h3>
+      <p>Recognitions & achievements.</p>
+      <p><em>Placeholder: list your awards, recognitions, or milestones here.</em></p>
+    </div>
     </details>
 
+  </div>
+</details>
     <footer>
       ⚔️ JoshuaGDD • IT103-1L.A301 ⚔️
     </footer>
   </div>
 
   <script>
+    // Play animation video on hover, no JS for image switch
     // Play animation video on hover
     const animThumb = document.querySelector('.thumb.large:nth-child(2)');
     const animVideo = animThumb.querySelector('video');
@@ -268,6 +344,7 @@ header img {
 
 
                               
+
 
 
 
